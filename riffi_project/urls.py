@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.music.views import MusicExtractionAPIView
+from apps.music.views import ExtractFileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('extract-music/',MusicExtractionAPIView.as_view(), name='extract-music'),
+    path('extract-file/', ExtractFileView.as_view(), name='extract_file'),
+
 ]
