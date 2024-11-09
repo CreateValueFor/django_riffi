@@ -175,8 +175,8 @@ class ExtractFileView(APIView):
                             print(" completed - time[%ss] url[%s]" % (time.time() - start, completed_url))
                         else:
                             all_done=False
-                time.sleep(10)
+                time.sleep(5)
         
-            return JsonResponse(completed_url_list)
+            return JsonResponse({"status":"success", "download_url": completed_url_list},safe=False)
         else:
             return JsonResponse({'errors': form.errors}, status=400)
